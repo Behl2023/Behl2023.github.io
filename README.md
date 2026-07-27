@@ -1,13 +1,12 @@
-# Amanpreet Behl — Research Website
+# Amanpreet Behl Academic Website
 
-A static GitHub Pages website built for Amanpreet Behl.
+Static GitHub Pages website. Upload the contents of this folder directly to the root of `Behl2023.github.io`.
 
-## Upload instructions
-Upload the contents of this folder directly to the root of the `Behl2023.github.io` repository:
+## Update CV
+Replace `assets/docs/Amanpreet_Behl_CV.pdf`.
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/`
+## Add photographs
+Add images under `assets/images/` and reference them with relative paths. Use simple lowercase filenames without spaces.
 
-Do not upload the outer `amanpreet_site_v2` folder.
+## Publish
+Use GitHub browser: Add file → Upload files → select the contents of this folder → Commit changes.
