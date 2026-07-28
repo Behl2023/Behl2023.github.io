@@ -1,1 +1,146 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Conceptual guide to DNA extraction."><meta name="theme-color" content="#0B253A"><title>DNA Extraction Explained | Amanpreet Behl</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles-v4.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="header"><div class="shell nav"><a class="brand" href="index.html"><span>AB</span>Amanpreet Behl</a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="fieldwork.html">Fieldwork</a><a href="methods.html">Methods</a><a href="learn.html">Learn</a><a href="publications.html">Publications</a><a href="gallery.html">Gallery</a><a href="assets/docs/Amanpreet_Behl_CV.pdf" target="_blank" rel="noopener">CV</a><a href="index.html#contact">Contact</a><button class="theme" aria-label="Toggle colour theme">◐</button></nav></div></header><main id="main"><section class="page-hero"><div class="shell"><p class="eyebrow">Learning Hub</p><h1>DNA Extraction: From Tissue to Analysis-Ready DNA</h1><p class="lead">A conceptual guide to obtaining high-quality DNA for molecular and genomic analyses.</p></div></section><section class="section"><div class="shell article"><h2>Why DNA quality matters</h2><p>Downstream PCR, library preparation, sequencing, and variant discovery depend on DNA concentration, purity, integrity, and consistency across samples.</p><h2>QIAGEN spin-column concept</h2><div class="workflow"><span>Tissue preparation</span><span>Cell lysis</span><span>Protein digestion</span><span>DNA binding</span><span>Column washing</span><span>Elution</span><span>Quality assessment</span><span>Storage</span></div><h2>Quality checks</h2><p>Concentration may be assessed with fluorometric or spectrophotometric methods, purity with absorbance ratios, and integrity with gel electrophoresis where appropriate.</p><h2>Common causes of poor extraction</h2><ul><li>Too much starting tissue</li><li>Incomplete lysis or digestion</li><li>Carry-over of salts, ethanol, or proteins</li><li>Repeated freeze–thaw cycles</li><li>Cross-contamination during handling</li></ul><div class="notice"><strong>Practice note:</strong> Always follow the current manufacturer instructions, institutional biosafety requirements, sample permits, and laboratory supervision.</div></div></section></main><footer class="footer"><div class="shell footer-grid"><div><strong>Amanpreet Behl</strong><p>Molecular Ecology · Conservation Genomics · Population Genetics · Environmental Toxicology</p></div><div class="footer-links"><a href="mailto:behlamanpreet1@gmail.com">Email</a><a href="https://github.com/Behl2023" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/amanpreet-behl-86754b170/" target="_blank" rel="noopener">LinkedIn</a><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=DI_GD0oAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0003-2363-1801" target="_blank" rel="noopener">ORCID</a></div></div><div class="shell copyright">© <span id="year"></span> Amanpreet Behl</div></footer><script src="script-v4.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A detailed, beginner-friendly guide to fish tissue sampling, DNA extraction, DNA quality control, troubleshooting, and choosing extraction methods for molecular ecology and genomics.">
+  <meta name="theme-color" content="#0B253A">
+  <meta property="og:title" content="DNA Extraction: From Tissue to Analysis-Ready DNA">
+  <meta property="og:description" content="A practical learning guide for students and early-career researchers working with fish tissues and genomic DNA.">
+  <meta property="og:type" content="website">
+  <title>DNA Extraction Explained | Amanpreet Behl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-v4.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header"><div class="shell nav"><a class="brand" href="index.html"><span>AB</span>Amanpreet Behl</a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="fieldwork.html">Fieldwork</a><a href="methods.html">Methods</a><a href="learn.html">Learn</a><a href="publications.html">Publications</a><a href="gallery.html">Gallery</a><a href="assets/docs/Amanpreet_Behl_CV.pdf" target="_blank" rel="noopener">CV</a><a href="index.html#contact">Contact</a><button class="theme" aria-label="Toggle colour theme">◐</button></nav></div></header>
+
+<main id="main">
+<section class="page-hero dna-hero"><div class="shell"><p class="eyebrow">Learning Hub · Molecular Methods</p><h1>DNA Extraction: From Tissue to Analysis-Ready DNA</h1><p class="lead">A detailed conceptual guide to collecting fish tissue, isolating genomic DNA, evaluating quality, and preparing consistent samples for PCR, library preparation, sequencing, and population-genomic analysis.</p><div class="hero-actions"><a class="btn primary" href="#workflow">Explore the workflow</a><a class="btn secondary" href="#troubleshooting">Troubleshooting guide</a></div></div></section>
+
+<section class="section"><div class="shell article wide-article">
+  <div class="chapter-intro">
+    <div><p class="eyebrow">Chapter overview</p><h2>Why DNA quality matters</h2><p>DNA extraction is not merely a preparatory step. The concentration, purity, integrity, and consistency of the recovered DNA influence every downstream stage. Restriction digestion, PCR, library preparation, sequencing depth, read quality, and variant discovery can all be affected by poor or uneven starting material.</p></div>
+    <img src="assets/images/learning/dna-quality-pillars.png" alt="Illustrated overview of DNA concentration, purity, integrity and consistency" loading="lazy">
+  </div>
+
+  <div class="concept-grid four">
+    <article><span>01</span><h3>Concentration</h3><p>Enough double-stranded DNA must be available for the intended assay. A concentration that is adequate for PCR may still be insufficient for a sequencing library.</p></article>
+    <article><span>02</span><h3>Purity</h3><p>Proteins, salts, ethanol, phenol, detergents, and other carry-over contaminants may inhibit polymerases or restriction enzymes.</p></article>
+    <article><span>03</span><h3>Integrity</h3><p>High-molecular-weight DNA is less fragmented and usually supports more even library preparation and reliable downstream analysis.</p></article>
+    <article><span>04</span><h3>Consistency</h3><p>Samples should be processed as uniformly as possible. Uneven extraction quality can create technical variation that resembles biological variation.</p></article>
+  </div>
+
+  <div class="notice"><strong>Important distinction:</strong> fin clipping is usually described as <em>minimally invasive</em> or <em>non-lethal</em>, not fully non-invasive. Skin-mucus swabs and shed scales are more strictly non-invasive alternatives, although they may produce lower or less consistent DNA yields for demanding sequencing applications.</div>
+
+  <section class="learning-section" id="sampling">
+    <div class="section-heading"><p class="eyebrow">Fish sampling</p><h2>Which tissue should you use?</h2></div>
+    <div class="media-split">
+      <img src="assets/images/learning/fin-clip-overview.png" alt="Illustration of a fish fin clip as a minimally invasive DNA source" loading="lazy">
+      <div>
+        <h3>Fin clips: a practical balance for fish genomics</h3>
+        <p>Fin tissue is widely used in fish population genetics because a small clip can provide reliable genomic DNA while allowing the animal to survive when sampling is performed under approved animal-care procedures. Earlier work demonstrated that fins and scales can support efficient non-destructive genetic sampling, and recent whole-genome sequencing comparisons found fin clips to be more consistently suitable for sequencing than untreated skin or gill swabs.</p>
+        <p>However, “best” depends on the research question, species, animal size, welfare requirements, permits, and downstream method. For small-bodied or sensitive species, skin-mucus swabbing may be preferable. For archived specimens or market samples, muscle may be the only practical tissue.</p>
+        <div class="source-row"><a href="https://doi.org/10.1034/j.1601-5223.2003.01503.x" target="_blank" rel="noopener">Wasko et al. 2003 ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/39815330/" target="_blank" rel="noopener">Fin clips vs swabs for WGS ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/39185076/" target="_blank" rel="noopener">Skin-swabbing protocol ↗</a></div>
+      </div>
+    </div>
+
+    <div class="table-wrap"><table><thead><tr><th>Tissue/source</th><th>Animal impact</th><th>Typical strengths</th><th>Important limitations</th></tr></thead><tbody>
+      <tr><td>Fin clip</td><td>Minimally invasive; non-lethal when performed correctly</td><td>Reliable yield, easy preservation, commonly used for population genomics</td><td>Requires handling, ethical approval, trained sampling and wound-care considerations</td></tr>
+      <tr><td>Skin-mucus swab</td><td>Non-invasive</td><td>Lower welfare impact; useful for genotyping and potentially sequencing</td><td>Yield can be lower and more variable; contamination risk may be higher</td></tr>
+      <tr><td>Scales</td><td>Low impact or non-invasive when naturally shed</td><td>Easy field collection; can support PCR and restriction digestion</td><td>DNA quantity and consistency vary by species and scale condition</td></tr>
+      <tr><td>Muscle</td><td>Usually destructive or collected from dead specimens</td><td>Often high DNA yield; useful for archived or market samples</td><td>Not appropriate for live-release studies</td></tr>
+      <tr><td>Blood</td><td>Minimally invasive but technically demanding</td><td>Can provide high-quality nucleated-cell DNA in fishes</td><td>Requires specialised collection, anticoagulant handling and species-specific expertise</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section class="learning-section" id="workflow">
+    <div class="section-heading"><p class="eyebrow">Conceptual workflow</p><h2>QIAGEN silica spin-column extraction</h2><p>This section explains the logic of the workflow. It does not replace the current manufacturer handbook or your laboratory’s approved protocol.</p></div>
+    <figure class="learning-figure"><img src="assets/images/learning/amanpreet-fish-dna-extraction-workflow.png" alt="BioRender workflow created by Amanpreet Behl showing fish fin clip DNA extraction with a QIAGEN spin column" loading="lazy"><figcaption>Original educational workflow created by Amanpreet Behl using BioRender. Reuse requires permission from the creator and must comply with BioRender licensing terms.</figcaption></figure>
+
+    <div class="step-grid">
+      <article><b>1</b><h3>Tissue preparation</h3><p>Use a small, well-preserved piece of tissue. Excess starting material can overload the lysis chemistry and silica membrane.</p></article>
+      <article><b>2</b><h3>Cell lysis</h3><p>Detergent-containing lysis buffer disrupts cellular and nuclear membranes, releasing DNA and proteins into solution.</p></article>
+      <article><b>3</b><h3>Protein digestion</h3><p>Proteinase K digests proteins, including nucleases that could otherwise degrade the DNA.</p></article>
+      <article><b>4</b><h3>Binding conditions</h3><p>Binding buffer and alcohol create chemical conditions under which DNA adsorbs to the silica membrane.</p></article>
+      <article><b>5</b><h3>Column loading</h3><p>The lysate passes through the spin column. DNA remains bound while much of the unwanted material enters the flow-through.</p></article>
+      <article><b>6</b><h3>Wash steps</h3><p>Wash buffers remove proteins, salts, and other contaminants while DNA remains attached to the membrane.</p></article>
+      <article><b>7</b><h3>Membrane drying</h3><p>Residual ethanol must be removed because it can interfere with PCR, enzymatic digestion, and library preparation.</p></article>
+      <article><b>8</b><h3>Elution</h3><p>Low-salt buffer or nuclease-free water releases DNA from the silica membrane into a clean collection tube.</p></article>
+    </div>
+
+    <figure class="learning-figure compact"><img src="assets/images/learning/spin-column-concept.png" alt="Illustrated conceptual spin-column DNA extraction workflow" loading="lazy"><figcaption>Hand-drawn-style conceptual summary generated for this Learning Hub. Always follow the current kit handbook for operational details.</figcaption></figure>
+  </section>
+
+  <section class="learning-section" id="quality-control">
+    <div class="section-heading"><p class="eyebrow">Quality control</p><h2>How should extracted DNA be assessed?</h2></div>
+    <div class="cards three learning-cards">
+      <article><h3>Fluorometric quantification</h3><p>Qubit-type assays selectively measure double-stranded DNA and are generally preferred when accurate concentration is essential for library preparation.</p></article>
+      <article><h3>Spectrophotometry</h3><p>NanoDrop-type instruments estimate concentration and provide absorbance ratios that may indicate protein, salt, or solvent contamination. Ratios should be interpreted as screening indicators, not absolute proof of purity.</p></article>
+      <article><h3>Gel electrophoresis</h3><p>A high-molecular-weight band with limited smearing suggests relatively intact DNA. Gel assessment is qualitative and should be combined with concentration and purity measurements.</p></article>
+    </div>
+    <div class="notice"><strong>Why quantity matters:</strong> insufficient DNA can lead to failed library preparation, extra PCR cycles, uneven representation, lower complexity, reduced sequencing depth, and missing genotypes. Extremely high apparent concentration is also not automatically good—it may reflect RNA, contaminants, or an inaccurate spectrophotometric estimate.</div>
+  </section>
+
+  <section class="learning-section" id="method-selection">
+    <div class="section-heading"><p class="eyebrow">Choosing a method</p><h2>Commercial kits and alternative approaches</h2></div>
+    <p>No extraction method is universally superior. The right choice depends on tissue type, throughput, required DNA fragment length, downstream analysis, cost, equipment, hazardous-waste restrictions, and available technical support.</p>
+    <div class="table-wrap"><table><thead><tr><th>Method</th><th>Principle</th><th>Useful features</th><th>Considerations</th></tr></thead><tbody>
+      <tr><td>QIAGEN DNeasy Blood & Tissue</td><td>Silica spin column</td><td>Standardised workflow for animal tissues; suitable for PCR and genotyping</td><td>Per-sample cost; membrane can be overloaded; follow the current handbook</td></tr>
+      <tr><td>Thermo Fisher PureLink Genomic DNA Mini Kit</td><td>Silica spin column</td><td>Designed for tissues, cells, blood, bacteria and swabs</td><td>Optimisation may be required for unusual tissues or very small samples</td></tr>
+      <tr><td>Promega Wizard Genomic DNA Purification</td><td>Solution-based salting-out</td><td>Can preserve high-molecular-weight DNA without silica or organic solvents</td><td>More manual handling and precipitation steps</td></tr>
+      <tr><td>Phenol–chloroform</td><td>Organic extraction</td><td>Can produce high yield and long DNA fragments</td><td>Hazardous chemicals, labour intensive, phase-separation errors and carry-over risk</td></tr>
+      <tr><td>Low-cost salt/detergent methods</td><td>Lysis followed by salt-based purification</td><td>Useful in resource-limited laboratories; fish-fin protocols have been published</td><td>Requires careful local validation before sequencing-scale use</td></tr>
+    </tbody></table></div>
+    <div class="source-row"><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/dneasy-blood-and-tissue-kit" target="_blank" rel="noopener">QIAGEN DNeasy resources ↗</a><a href="https://www.thermofisher.com/order/catalog/product/in/en/K182001" target="_blank" rel="noopener">Thermo Fisher PureLink ↗</a><a href="https://www.promega.com/products/nucleic-acid-extraction/genomic-dna/wizard-genomic-dna-purification-kit/" target="_blank" rel="noopener">Promega Wizard ↗</a><a href="https://doi.org/10.1371/journal.pone.0318708" target="_blank" rel="noopener">Low-cost fish-fin method ↗</a></div>
+  </section>
+
+  <section class="learning-section" id="troubleshooting">
+    <div class="section-heading"><p class="eyebrow">Troubleshooting</p><h2>Common extraction problems</h2></div>
+    <figure class="learning-figure compact"><img src="assets/images/learning/quality-troubleshooting.png" alt="Illustrated DNA quality checks and common causes of poor extraction" loading="lazy"></figure>
+    <div class="accordion-list">
+      <details><summary>DNA concentration is very low</summary><p>Check tissue preservation, tissue amount, digestion completeness, binding conditions, membrane loading, elution volume, and whether the quantification method is sensitive enough. A second elution may recover more total DNA but can reduce concentration.</p></details>
+      <details><summary>The 260/280 ratio is low</summary><p>Protein or reagent carry-over may be present. Review digestion, wash steps, membrane drying, and whether the instrument blank matches the elution buffer.</p></details>
+      <details><summary>The 260/230 ratio is low</summary><p>Residual salts, guanidine, ethanol, or other organic compounds may remain. Ensure correct wash-buffer preparation and complete membrane drying before elution.</p></details>
+      <details><summary>DNA is visibly degraded</summary><p>Possible causes include poor preservation, nuclease activity, repeated freeze–thaw cycles, prolonged warm storage, vigorous mechanical shearing, or delayed processing.</p></details>
+      <details><summary>Some samples work and others fail</summary><p>Investigate unequal tissue size, inconsistent preservation, sample age, digestion time, extraction batch, operator differences, tissue type, and species-specific inhibitors. Include extraction controls and record batch metadata.</p></details>
+      <details><summary>DNA is present but PCR or restriction digestion fails</summary><p>Concentration alone is not enough. Residual ethanol, salts, proteins, detergents, or excessive DNA input may inhibit enzymes. Dilution can sometimes reduce inhibitor concentration, but the root cause should still be investigated.</p></details>
+    </div>
+  </section>
+
+  <section class="learning-section">
+    <div class="section-heading"><p class="eyebrow">Field practice</p><h2>Fin-clip collection: principles for reliable samples</h2></div>
+    <div class="check-grid">
+      <div>Use clean, sterilised instruments and change or decontaminate them between individuals.</div>
+      <div>Collect the smallest tissue amount that is scientifically adequate and ethically approved.</div>
+      <div>Place tissue immediately into the approved preservation medium.</div>
+      <div>Use unique, waterproof sample labels and maintain a separate metadata record.</div>
+      <div>Avoid prolonged heat, sunlight, and repeated freeze–thaw cycles.</div>
+      <div>Follow permits, animal-welfare approvals, biosafety rules, and species-specific handling guidance.</div>
+    </div>
+  </section>
+
+  <section class="learning-section references">
+    <div class="section-heading"><p class="eyebrow">Recommended reading</p><h2>Sources and further learning</h2></div>
+    <ol>
+      <li>Wasko, A. P., Martins, C., Oliveira, C., & Foresti, F. (2003). Non-destructive genetic sampling in fish: an improved method for DNA extraction from fish fins and scales. <em>Hereditas</em>, 138, 161–165. <a href="https://doi.org/10.1034/j.1601-5223.2003.01503.x" target="_blank" rel="noopener">DOI ↗</a></li>
+      <li>Comparison of whole-genome sequencing performance from fish swabs and fin clips (2025). <a href="https://pubmed.ncbi.nlm.nih.gov/39815330/" target="_blank" rel="noopener">PubMed ↗</a></li>
+      <li>Skin-swabbing protocol to collect DNA samples from small-bodied fish species (2024). <a href="https://pubmed.ncbi.nlm.nih.gov/39185076/" target="_blank" rel="noopener">PubMed ↗</a></li>
+      <li>Lenka, P. et al. (2025). A highly cost-effective, eco-friendly tissue lysis and extraction method for faster DNA isolation from fish fin. <em>PLoS ONE</em>, 20, e0318708. <a href="https://doi.org/10.1371/journal.pone.0318708" target="_blank" rel="noopener">DOI ↗</a></li>
+      <li>QIAGEN. DNeasy Blood & Tissue Handbook, current manufacturer documentation. <a href="https://www.qiagen.com/lr/resources/download.aspx?id=68f29296-5a9f-40fa-8b3d-1c148d0b3030&lang=en" target="_blank" rel="noopener">Handbook ↗</a></li>
+    </ol>
+  </section>
+
+  <section class="help-card"><div><p class="eyebrow">Need help creating a scientific workflow?</p><h2>Educational illustration support</h2><p>This page combines conceptual diagrams with an original BioRender workflow. Students and early-career researchers may contact me for guidance on planning clear scientific figures, workflow diagrams, and learning resources.</p></div><a class="btn primary" href="mailto:behlamanpreet1@gmail.com?subject=Scientific%20illustration%20or%20learning%20resource%20request">Send an email request</a></section>
+
+  <div class="notice"><strong>Practice note:</strong> This page is an educational overview. Always follow the current manufacturer instructions, institutional biosafety requirements, animal-welfare approvals, sample permits, and laboratory supervision. Links to commercial suppliers are provided for learning and are not endorsements.</div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="shell footer-grid"><div><strong>Amanpreet Behl</strong><p>Molecular Ecology · Conservation Genomics · Population Genetics · Environmental Toxicology</p></div><div class="footer-links"><a href="mailto:behlamanpreet1@gmail.com">Email</a><a href="https://github.com/Behl2023" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/amanpreet-behl-86754b170/" target="_blank" rel="noopener">LinkedIn</a><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=DI_GD0oAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0003-2363-1801" target="_blank" rel="noopener">ORCID</a></div></div><div class="shell copyright">© <span id="year"></span> Amanpreet Behl</div></footer>
+<script src="script-v4.js"></script>
+</body>
+</html>
