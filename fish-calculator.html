@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculate Fulton's condition factor, estimated fish weight and total biomass.">
+  <meta name="theme-color" content="#0B253A">
+  <title>Fish Condition and Biomass Calculator | Amanpreet Behl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-v4.css">
+  <style>
+    .calculator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+    .calculator-card{padding:1.5rem;border:1px solid rgba(120,140,150,.28);border-radius:18px;background:var(--card,#fff)}
+    .calculator-card label{display:block;font-weight:700;margin:.85rem 0 .35rem}
+    .calculator-card input,.calculator-card select,.calculator-card textarea{width:100%;padding:.78rem;border:1px solid #9aa8b2;border-radius:10px;font:inherit;background:transparent;color:inherit}
+    .calculator-card textarea{min-height:130px;resize:vertical}
+    .result-box{margin-top:1rem;padding:1rem;border-radius:12px;background:rgba(27,126,125,.12);line-height:1.6}
+    .button-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+    .small-note{font-size:.92rem;opacity:.82}
+    @media print{.header,.button-row,.no-print{display:none!important}.page-hero{padding:1rem 0}.calculator-card{break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="shell nav">
+      <a class="brand" href="index.html"><span>AB</span>Amanpreet Behl</a>
+      <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="methods.html">Methods</a>
+        <a href="learn.html">Learn</a>
+        <a href="fish-morphometrics.html">Morphometrics</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="theme" aria-label="Toggle colour theme">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="shell">
+        <p class="eyebrow">Interactive research tool</p>
+        <h1>Fish Condition and Biomass Calculator</h1>
+        <p class="lead">Calculate Fulton’s condition factor, estimate fish weight from length and summarise total biomass directly in your browser.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell calculator-grid">
+        <article class="calculator-card">
+          <h2>Fulton’s condition factor</h2>
+          <p><strong>K = 100W/L³</strong> when weight is entered in grams and length in centimetres.</p>
+          <label for="kWeight">Fish weight (g)</label>
+          <input id="kWeight" type="number" min="0" step="any" placeholder="Example: 250">
+          <label for="kLength">Fish length (cm)</label>
+          <input id="kLength" type="number" min="0" step="any" placeholder="Example: 25">
+          <label for="lengthType">Length type</label>
+          <select id="lengthType"><option>Total length</option><option>Fork length</option><option>Standard length</option></select>
+          <button class="btn" type="button" onclick="calculateK()">Calculate K</button>
+          <div class="result-box" id="kResult">Enter weight and length to calculate Fulton’s K.</div>
+        </article>
+
+        <article class="calculator-card">
+          <h2>Estimated weight from length</h2>
+          <p>Uses the length–weight relationship <strong>W = aLᵇ</strong>.</p>
+          <label for="lwLength">Fish length</label>
+          <input id="lwLength" type="number" min="0" step="any" placeholder="Enter length">
+          <label for="aCoefficient">Coefficient a</label>
+          <input id="aCoefficient" type="number" min="0" step="any" placeholder="Enter a">
+          <label for="bCoefficient">Exponent b</label>
+          <input id="bCoefficient" type="number" min="0" step="any" value="3">
+          <button class="btn" type="button" onclick="calculateWeight()">Estimate weight</button>
+          <div class="result-box" id="weightResult">Enter L, a and b.</div>
+          <p class="small-note">Use coefficients appropriate to the species, population and units reported in the source study.</p>
+        </article>
+
+        <article class="calculator-card">
+          <h2>Total biomass</h2>
+          <label for="weights">Individual fish weights</label>
+          <textarea id="weights" placeholder="Paste values separated by commas, spaces or new lines"></textarea>
+          <label for="weightUnit">Weight unit</label>
+          <select id="weightUnit"><option value="g">grams</option><option value="kg">kilograms</option></select>
+          <button class="btn" type="button" onclick="calculateBiomass()">Calculate biomass</button>
+          <div class="result-box" id="biomassResult">Paste at least one fish weight.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tint">
+      <div class="shell">
+        <h2>Download your results</h2>
+        <p>Each downloaded file includes the calculation date, website name and source URL.</p>
+        <div class="button-row">
+          <button class="btn" type="button" onclick="downloadReport()">Download report</button>
+          <button class="btn" type="button" onclick="downloadCSV()">Download CSV</button>
+          <button class="btn" type="button" onclick="window.print()">Print / Save as PDF</button>
+        </div>
+        <div class="result-box" id="sourceBox">
+          <strong>Generated using the Fish Condition and Biomass Calculator</strong><br>
+          Marine Genomics Learning Hub — Amanpreet Behl<br>
+          https://behl2023.github.io/fish-calculator.html
+        </div>
+        <p class="small-note">Fulton’s K is most suitable for comparisons made within the same species, life stage, season, sex and length definition. It should not automatically be interpreted as a direct measure of health.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell copyright">© <span id="year"></span> Amanpreet Behl · Marine Genomics Learning Hub</div></footer>
+  <script src="script-v4.js"></script>
+  <script>
+    const results = { fulton: null, estimatedWeight: null, biomass: null };
+    const num = value => Number(value);
+    const generatedAt = () => new Date().toLocaleString();
+
+    function updateSourceBox() {
+      document.getElementById('sourceBox').innerHTML = '<strong>Generated using the Fish Condition and Biomass Calculator</strong><br>Marine Genomics Learning Hub — Amanpreet Behl<br>https://behl2023.github.io/fish-calculator.html<br>Calculated on: ' + generatedAt();
+    }
+
+    function calculateK() {
+      const weight = num(document.getElementById('kWeight').value);
+      const length = num(document.getElementById('kLength').value);
+      const type = document.getElementById('lengthType').value;
+      const box = document.getElementById('kResult');
+      if (!(weight > 0 && length > 0)) { box.textContent = 'Enter positive weight and length values.'; return; }
+      const k = (100 * weight) / Math.pow(length, 3);
+      results.fulton = { weight, length, type, k };
+      box.innerHTML = '<strong>Fulton’s K = ' + k.toFixed(3) + '</strong><br>' + type + ': ' + length + ' cm<br>Weight: ' + weight + ' g';
+      updateSourceBox();
+    }
+
+    function calculateWeight() {
+      const length = num(document.getElementById('lwLength').value);
+      const a = num(document.getElementById('aCoefficient').value);
+      const b = num(document.getElementById('bCoefficient').value);
+      const box = document.getElementById('weightResult');
+      if (!(length > 0 && a > 0 && b > 0)) { box.textContent = 'Enter positive values for L, a and b.'; return; }
+      const weight = a * Math.pow(length, b);
+      results.estimatedWeight = { length, a, b, weight };
+      box.innerHTML = '<strong>Estimated weight = ' + weight.toFixed(3) + '</strong><br>W = ' + a + ' × ' + length + '<sup>' + b + '</sup>';
+      updateSourceBox();
+    }
+
+    function calculateBiomass() {
+      const values = document.getElementById('weights').value.split(/[\s,;]+/).map(Number).filter(v => Number.isFinite(v) && v >= 0);
+      const unit = document.getElementById('weightUnit').value;
+      const box = document.getElementById('biomassResult');
+      if (!values.length) { box.textContent = 'Paste at least one valid fish weight.'; return; }
+      const total = values.reduce((sum, value) => sum + value, 0);
+      const mean = total / values.length;
+      const minimum = Math.min(...values);
+      const maximum = Math.max(...values);
+      results.biomass = { values, unit, total, mean, minimum, maximum };
+      box.innerHTML = '<strong>Total biomass = ' + total.toFixed(3) + ' ' + unit + '</strong><br>N = ' + values.length + '<br>Mean = ' + mean.toFixed(3) + ' ' + unit + '<br>Minimum = ' + minimum + ' ' + unit + '<br>Maximum = ' + maximum + ' ' + unit;
+      updateSourceBox();
+    }
+
+    function buildReport() {
+      let report = 'FISH CONDITION AND BIOMASS CALCULATOR\n';
+      report += 'Marine Genomics Learning Hub — Amanpreet Behl\n';
+      report += 'Source: https://behl2023.github.io/fish-calculator.html\n';
+      report += 'Downloaded on: ' + generatedAt() + '\n\n';
+      if (results.fulton) report += 'FULTON CONDITION FACTOR\nWeight: ' + results.fulton.weight + ' g\n' + results.fulton.type + ': ' + results.fulton.length + ' cm\nK: ' + results.fulton.k.toFixed(3) + '\nFormula: K = 100W/L^3\n\n';
+      if (results.estimatedWeight) report += 'LENGTH-WEIGHT ESTIMATE\nLength: ' + results.estimatedWeight.length + '\na: ' + results.estimatedWeight.a + '\nb: ' + results.estimatedWeight.b + '\nEstimated weight: ' + results.estimatedWeight.weight.toFixed(3) + '\nFormula: W = aL^b\n\n';
+      if (results.biomass) report += 'BIOMASS SUMMARY\nNumber of fish: ' + results.biomass.values.length + '\nTotal biomass: ' + results.biomass.total.toFixed(3) + ' ' + results.biomass.unit + '\nMean: ' + results.biomass.mean.toFixed(3) + ' ' + results.biomass.unit + '\nMinimum: ' + results.biomass.minimum + ' ' + results.biomass.unit + '\nMaximum: ' + results.biomass.maximum + ' ' + results.biomass.unit + '\n\n';
+      report += 'Disclaimer: These are calculation outputs and not veterinary or fisheries-management advice. Use species-appropriate methods and coefficients.';
+      return report;
+    }
+
+    function downloadReport() {
+      const blob = new Blob([buildReport()], { type: 'text/plain;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'fish_condition_biomass_report.txt';
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+
+    function downloadCSV() {
+      const rows = [['Generated_From','https://behl2023.github.io/fish-calculator.html'],['Generated_On',generatedAt()]];
+      if (results.fulton) rows.push(['Fulton_K',results.fulton.k],['Weight_g',results.fulton.weight],['Length_cm',results.fulton.length],['Length_Type',results.fulton.type]);
+      if (results.estimatedWeight) rows.push(['Estimated_Weight',results.estimatedWeight.weight],['Length',results.estimatedWeight.length],['a',results.estimatedWeight.a],['b',results.estimatedWeight.b]);
+      if (results.biomass) rows.push(['Biomass_Total',results.biomass.total],['Biomass_Unit',results.biomass.unit],['N',results.biomass.values.length],['Mean',results.biomass.mean],['Minimum',results.biomass.minimum],['Maximum',results.biomass.maximum]);
+      const csv = rows.map(row => row.map(value => '"' + String(value).replace(/"/g,'""') + '"').join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'fish_condition_biomass_results.csv';
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+  </script>
+</body>
+</html>
