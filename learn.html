@@ -1,1 +1,103 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Learning resources for emerging molecular ecology researchers."><meta name="theme-color" content="#0B253A"><title>Learning Hub | Amanpreet Behl</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles-v4.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="header"><div class="shell nav"><a class="brand" href="index.html"><span>AB</span>Amanpreet Behl</a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="fieldwork.html">Fieldwork</a><a href="methods.html">Methods</a><a href="learn.html">Learn</a><a href="publications.html">Publications</a><a href="gallery.html">Gallery</a><a href="assets/docs/Amanpreet_Behl_CV.pdf" target="_blank" rel="noopener">CV</a><a href="index.html#contact">Contact</a><button class="theme" aria-label="Toggle colour theme">◐</button></nav></div></header><main id="main"><section class="page-hero"><div class="shell"><p class="eyebrow">Learning Hub</p><h1>Practical learning for emerging researchers</h1><p class="lead">Concepts, decisions, field methods and analytical logic behind marine biology, molecular ecology and population-genomic research.</p></div></section><section class="section"><div class="shell cards two"><a class="card-link" href="dna-extraction.html"><h2>DNA Extraction</h2><p>Principles, quality checks, troubleshooting and contamination control.</p></a><a class="card-link" href="ddrad.html"><h2>Understanding ddRAD</h2><p>Restriction digestion, barcoding, pooling, size selection, sequencing and SNP discovery.</p></a><a class="card-link" href="bioinformatics.html"><h2>Bioinformatics Workflow</h2><p>Read QC, alignment, variant discovery, filtering and analytical readiness.</p></a><a class="card-link" href="population-genetics.html"><h2>Population Genetics</h2><p>Alleles, heterozygosity, FST, PCA, ADMIXTURE, DAPC, Ne and interpretation.</p></a><a class="card-link" href="fish-morphometrics.html"><h2>Fish Morphometrics</h2><p>How to position specimens, define landmarks, take body measurements and maintain quality control.</p></a><a class="card-link" href="fish-calculator.html"><h2>Fish Condition and Biomass Calculator</h2><p>Calculate Fulton’s K, estimate weight from length and summarise total biomass with downloadable results.</p></a></div></section><section class="section tint"><div class="shell"><h2>In development</h2><div class="chips"><span>Otolith preparation and ageing</span><span>Heavy-metal calculations</span><span>PCR and gel electrophoresis</span><span>Variant filtering</span><span>PCA interpretation</span><span>ADMIXTURE interpretation</span><span>DAPC interpretation</span><span>FST interpretation</span><span>Effective population size</span><span>Environmental toxicology</span></div></div></section></main><footer class="footer"><div class="shell footer-grid"><div><strong>Amanpreet Behl</strong><p>Molecular Ecology · Conservation Genomics · Population Genetics · Environmental Toxicology</p></div><div class="footer-links"><a href="mailto:behlamanpreet1@gmail.com">Email</a><a href="https://github.com/Behl2023" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/amanpreet-behl-86754b170/" target="_blank" rel="noopener">LinkedIn</a><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=DI_GD0oAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0003-2363-1801" target="_blank" rel="noopener">ORCID</a></div></div><div class="shell copyright">© <span id="year"></span> Amanpreet Behl</div></footer><script src="script-v4.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learning resources and interactive tools for marine biology, molecular ecology, fish biology and population genomics.">
+  <meta name="theme-color" content="#0B253A">
+  <title>Learning Hub | Amanpreet Behl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-v4.css">
+  <style>
+    .hub-intro{max-width:850px}.hub-section{margin-top:3.5rem}.hub-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}.hub-heading p{max-width:650px;margin:0}.hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.hub-card{display:block;padding:1.4rem;border:1px solid rgba(114,137,149,.25);border-radius:18px;background:var(--card,#fff);text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.hub-card:hover{transform:translateY(-4px);border-color:#168b89;box-shadow:0 14px 32px rgba(7,37,54,.1)}.hub-card .tag{display:inline-block;margin-bottom:.8rem;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#147a79}.hub-card h3{margin:.1rem 0 .55rem}.hub-card p{margin:0}.hub-card.live{position:relative;overflow:hidden}.hub-card.live:after{content:'Available now';position:absolute;top:1rem;right:1rem;padding:.3rem .55rem;border-radius:999px;background:rgba(22,139,137,.12);font-size:.72rem;font-weight:700;color:#147a79}.hub-card.soon{opacity:.72}.tool-banner{display:grid;grid-template-columns:1.35fr .65fr;gap:1.5rem;align-items:center;padding:2rem;border-radius:24px;background:linear-gradient(135deg,#0b253a,#0d555e);color:white}.tool-banner p{color:rgba(255,255,255,.82)}.tool-banner .btn{background:white;color:#0b253a}.hub-path{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}.hub-path span{padding:.45rem .75rem;border-radius:999px;background:rgba(255,255,255,.1);font-size:.86rem}@media(max-width:900px){.hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tool-banner{grid-template-columns:1fr}}@media(max-width:620px){.hub-grid{grid-template-columns:1fr}.hub-heading{display:block}.hub-heading p{margin-top:.5rem}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="shell nav">
+      <a class="brand" href="index.html"><span>AB</span>Amanpreet Behl</a>
+      <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="links">
+        <a href="index.html">Home</a><a href="research.html">Research</a><a href="fieldwork.html">Fieldwork</a><a href="methods.html">Methods</a><a href="learn.html" aria-current="page">Learn</a><a href="publications.html">Publications</a><a href="gallery.html">Gallery</a><a href="assets/docs/Amanpreet_Behl_CV.pdf" target="_blank" rel="noopener">CV</a><a href="index.html#contact">Contact</a><button class="theme" aria-label="Toggle colour theme">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="shell hub-intro">
+        <p class="eyebrow">Learning Hub</p>
+        <h1>Learn marine research from specimen to scientific result</h1>
+        <p class="lead">Practical guides, analytical explanations and browser-based research tools for students and early-career researchers in fish biology, molecular ecology, environmental science and population genomics.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="tool-banner">
+          <div>
+            <p class="eyebrow">New interactive tool</p>
+            <h2>Fish Condition and Biomass Calculator</h2>
+            <p>Calculate Fulton’s condition factor, estimate fish weight from length and summarise total biomass. Download branded results as a report or CSV.</p>
+            <a class="btn" href="fish-calculator.html">Open calculator →</a>
+          </div>
+          <div class="hub-path" aria-label="Calculator features"><span>Fulton’s K</span><span>Length–weight</span><span>Total biomass</span><span>Download results</span></div>
+        </div>
+
+        <div class="hub-section">
+          <div class="hub-heading"><div><p class="eyebrow">01 · Molecular Biology</p><h2>From tissue to sequence-ready DNA</h2></div><p>Understand the laboratory decisions that determine DNA quality and sequencing success.</p></div>
+          <div class="hub-grid">
+            <a class="hub-card live" href="dna-extraction.html"><span class="tag">Laboratory guide</span><h3>DNA Extraction</h3><p>Lysis, purification, contamination control, DNA quality assessment and troubleshooting.</p></a>
+            <a class="hub-card live" href="ddrad.html"><span class="tag">Sequencing guide</span><h3>Understanding ddRAD</h3><p>Restriction digestion, adapters, barcodes, size selection, pooling and SNP discovery.</p></a>
+            <article class="hub-card soon"><span class="tag">In development</span><h3>PCR and Gel Electrophoresis</h3><p>Reaction design, amplification checks, gel interpretation and common laboratory errors.</p></article>
+          </div>
+        </div>
+
+        <div class="hub-section">
+          <div class="hub-heading"><div><p class="eyebrow">02 · Fish Biology</p><h2>Measure form, condition and age</h2></div><p>Practical field and laboratory methods for converting fish specimens into reliable biological data.</p></div>
+          <div class="hub-grid">
+            <a class="hub-card live" href="fish-morphometrics.html"><span class="tag">Step-by-step protocol</span><h3>Fish Morphometrics</h3><p>Position specimens, define landmarks, record standard measurements and control observer error.</p></a>
+            <a class="hub-card live" href="fish-calculator.html"><span class="tag">Interactive research tool</span><h3>Condition and Biomass</h3><p>Calculate Fulton’s K, length–weight estimates and biomass with downloadable results.</p></a>
+            <article class="hub-card soon"><span class="tag">In development</span><h3>Otolith Preparation and Ageing</h3><p>Otolith extraction, sectioning, imaging, annulus interpretation and age-quality control.</p></article>
+            <article class="hub-card soon"><span class="tag">In development</span><h3>Meristic Counts</h3><p>Count fin rays, scales, gill rakers and other discrete taxonomic characters consistently.</p></article>
+            <article class="hub-card soon"><span class="tag">In development</span><h3>Morphometric Data Analysis</h3><p>Size correction, ratios, allometry, PCA, group comparison and biological interpretation.</p></article>
+          </div>
+        </div>
+
+        <div class="hub-section">
+          <div class="hub-heading"><div><p class="eyebrow">03 · Bioinformatics and Population Genetics</p><h2>From raw reads to population-level inference</h2></div><p>Follow the analytical workflow and learn what each statistic or visualisation actually means.</p></div>
+          <div class="hub-grid">
+            <a class="hub-card live" href="bioinformatics.html"><span class="tag">Computational workflow</span><h3>Bioinformatics Workflow</h3><p>Read QC, alignment, variant discovery, SNP filtering and analysis readiness.</p></a>
+            <a class="hub-card live" href="population-genetics.html"><span class="tag">Concept guide</span><h3>Population Genetics</h3><p>Allele frequencies, heterozygosity, FST, PCA, ADMIXTURE, DAPC and effective population size.</p></a>
+            <article class="hub-card soon"><span class="tag">In development</span><h3>Interpreting Structure</h3><p>How to compare PCA, DAPC and ADMIXTURE without overinterpreting clusters.</p></article>
+          </div>
+        </div>
+
+        <div class="hub-section">
+          <div class="hub-heading"><div><p class="eyebrow">04 · Environmental Toxicology</p><h2>Measure contaminants and evaluate biological risk</h2></div><p>Methods and calculations for trace-element analysis in marine organisms and seafood-safety research.</p></div>
+          <div class="hub-grid">
+            <article class="hub-card soon"><span class="tag">In development</span><h3>ICP-MS Workflow</h3><p>Sample preparation, digestion, calibration, blanks, certified reference materials and QA/QC.</p></article>
+            <article class="hub-card soon"><span class="tag">In development</span><h3>Heavy-Metal Calculations</h3><p>Concentration conversion, EDI, EWI, THQ, hazard index and risk interpretation.</p></article>
+            <article class="hub-card soon"><span class="tag">In development</span><h3>Seafood-Safety Context</h3><p>How to compare tissue concentrations with guidelines while communicating uncertainty correctly.</p></article>
+          </div>
+        </div>
+
+        <div class="hub-section">
+          <div class="hub-heading"><div><p class="eyebrow">05 · Research Tools</p><h2>Calculate, check and export</h2></div><p>Browser-based tools designed to support transparent and repeatable fisheries calculations.</p></div>
+          <div class="hub-grid">
+            <a class="hub-card live" href="fish-calculator.html"><span class="tag">Available now</span><h3>Fish Condition and Biomass Calculator</h3><p>Fulton’s K, length–weight estimation, biomass summaries and branded downloads.</p></a>
+            <article class="hub-card soon"><span class="tag">Planned</span><h3>Morphometric Ratio Calculator</h3><p>Calculate proportional traits such as HL/TL, BD/SL and eye diameter/HL.</p></article>
+            <article class="hub-card soon"><span class="tag">Planned</span><h3>Heavy-Metal Risk Calculator</h3><p>Calculate dietary exposure and non-carcinogenic risk metrics from tissue concentrations.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell footer-grid"><div><strong>Amanpreet Behl</strong><p>Molecular Ecology · Conservation Genomics · Fish Biology · Environmental Toxicology</p></div><div class="footer-links"><a href="mailto:behlamanpreet1@gmail.com">Email</a><a href="https://github.com/Behl2023" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/amanpreet-behl-86754b170/" target="_blank" rel="noopener">LinkedIn</a><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=DI_GD0oAAAAJ" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0003-2363-1801" target="_blank" rel="noopener">ORCID</a></div></div><div class="shell copyright">© <span id="year"></span> Amanpreet Behl</div></footer>
+  <script src="script-v4.js"></script>
+</body>
+</html>
